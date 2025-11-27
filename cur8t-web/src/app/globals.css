@@ -147,10 +147,6 @@
 
   body {
     @apply bg-background text-foreground;
-    /* Performance optimizations */
-    transform: translateZ(0);
-    backface-visibility: hidden;
-    perspective: 1000px;
   }
 
   /* Optimize animations and transforms */
@@ -246,4 +242,40 @@
       touch-action: pan-y;
     }
   }
+}
+
+/* Clerk Modal - Fixed to viewport so it stays visible at current scroll position */
+.cl-rootBox {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  z-index: 99999 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  overflow: auto !important;
+}
+
+.cl-modalBackdrop {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background: rgba(0, 0, 0, 0.7) !important;
+  z-index: 99998 !important;
+}
+
+.cl-modalContent {
+  position: relative !important;
+  z-index: 99999 !important;
+  margin: auto !important;
+}
+
+.cl-signUp-root,
+.cl-signIn-root {
+  position: relative !important;
+  z-index: 99999 !important;
 }
